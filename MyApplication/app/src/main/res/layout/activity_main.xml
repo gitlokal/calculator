@@ -9,8 +9,189 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.bartek.calc.MainActivity">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="1"
+        android:id="@+id/oneButton"
+        android:layout_above="@+id/fourthButton"
+        android:layout_alignParentStart="true"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:id="@+id/twoButton"
+        android:layout_alignBottom="@+id/oneButton"
+        android:layout_toEndOf="@+id/oneButton"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:id="@+id/thirdButton"
+        android:layout_alignBottom="@+id/twoButton"
+        android:layout_toEndOf="@+id/twoButton"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:id="@+id/fourthButton"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:id="@+id/fifthButton"
+        android:layout_alignTop="@+id/fourthButton"
+        android:layout_toEndOf="@+id/fourthButton"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6"
+        android:id="@+id/sixthButton"
+        android:layout_above="@+id/eigthButton"
+        android:layout_toEndOf="@+id/eigthButton"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7"
+        android:id="@+id/seventhButton"
+        android:layout_below="@+id/fourthButton"
+        android:layout_alignParentStart="true"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8"
+        android:id="@+id/eigthButton"
+        android:layout_alignBottom="@+id/seventhButton"
+        android:layout_toEndOf="@+id/seventhButton"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:id="@+id/ninthButton"
+        android:layout_alignBottom="@+id/eigthButton"
+        android:layout_toEndOf="@+id/eigthButton"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/additionButton"
+        android:layout_alignTop="@+id/thirdButton"
+        android:layout_toEndOf="@+id/thirdButton"
+        android:onClick="onAdding" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button2"
+        android:layout_below="@+id/additionButton"
+        android:layout_toEndOf="@+id/sixthButton"
+        android:layout_alignBottom="@+id/sixthButton"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button3"
+        android:layout_below="@+id/button2"
+        android:layout_toEndOf="@+id/ninthButton"
+        android:layout_alignBottom="@+id/ninthButton"
+        android:onClick="onClick" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/zeroButton"
+        android:layout_below="@+id/eigthButton"
+        android:layout_alignEnd="@+id/eigthButton"
+        android:layout_toEndOf="@+id/seventhButton"
+        android:onClick="onClick" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:id="@+id/equalsButton"
+        android:layout_below="@+id/eigthButton"
+        android:layout_alignStart="@+id/ninthButton"
+        android:layout_toStartOf="@+id/button3"
+        android:onClick="onEqual" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Del"
+        android:id="@+id/delButton"
+        android:layout_alignBottom="@+id/equalsButton"
+        android:layout_toEndOf="@+id/equalsButton"
+        android:onClick="onDelete"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/additionButton"
+        android:layout_above="@+id/additionButton"
+        android:textDirection="rtl"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_above="@+id/editText1"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/additionButton"
+        android:textDirection="rtl"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText3"
+        android:layout_above="@+id/editText2"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/editText2"
+        android:textDirection="rtl"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText4"
+        android:textDirection="rtl"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/editText3" />
+
 </RelativeLayout>

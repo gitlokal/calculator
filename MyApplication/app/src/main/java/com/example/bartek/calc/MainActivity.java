@@ -13,59 +13,58 @@ import java.util.Stack;
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
-    private TextView textview;
+    private TextView textview1;
+    private TextView textview2;
+    private TextView textview3;
+    private TextView textview4;
     private String display;
-    private Stack stack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textview = (TextView) findViewById(R.id.editText);
+        textview1 = (TextView) findViewById(R.id.editText1);
+        textview2 = (TextView) findViewById(R.id.editText2);
+        textview3 = (TextView) findViewById(R.id.editText3);
+        textview4 = (TextView) findViewById(R.id.editText4);
         display = new String();
-        stack = new Stack();
 
     }
 
     public void onClick(View view) {
         button = (Button) view;
-        if(display.equals("0")) {
-            display = button.getText().toString();
-        } else if(button.getText().toString().equals("+")) {
-                stack.push(display);
-                stack.push("+");
-             display += button.getText().toString();
-        } else {
-            display += button.getText().toString();
-        }
+        display += button.getText().toString();
+        textview1.setText(display);
+    }
 
-        textview.setText(display);
+    public void onAdding(View view) {
+        button = (Button) view;
+        textview3.setText(display);
+        textview2.setText("+");
+        textview1.setText("");
+        display = "";
+
+
+    }
+
+    public void onEqual(View view) {
+        textview4.setText(textview3.getText());
+        textview3.setText(textview2.getText());
+        textview2.setText(textview1.getText());
+        textview1.setText("");
+
+
 
     }
 
     public void onDelete(View view) {
         button = (Button) view;
         display = "";
-        textview.setText(display);
-        stack.removeAllElements();
+        textview1.setText(display);
 
     }
 
     public void onResult(View view) {
-        int tmpX = 0;
-        int tmpY = 0;
-        String operation = "";
-        if(!stack.empty()) {
-            tmpX = Integer.parseInt((String) stack.pop());
-            operation = (String) stack.pop();
-            tmpY = Integer.parseInt((String) stack.pop());
-            switch(operation) {
-                case "+": textview.setText( Integer.toString(tmpX+tmpY));
-            }
-        }
-
-
-
 
 
     }
