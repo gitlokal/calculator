@@ -102,22 +102,22 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button2"
+        android:text="-"
+        android:id="@+id/subsractButton"
         android:layout_below="@+id/additionButton"
         android:layout_toEndOf="@+id/sixthButton"
         android:layout_alignBottom="@+id/sixthButton"
-        android:onClick="onClick" />
+        android:onClick="onSubsract" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button3"
-        android:layout_below="@+id/button2"
+        android:text="*"
+        android:id="@+id/Multiplybutton"
+        android:layout_below="@+id/subsractButton"
         android:layout_toEndOf="@+id/ninthButton"
         android:layout_alignBottom="@+id/ninthButton"
-        android:onClick="onClick" />
+        android:onClick="onMultiply" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -138,7 +138,7 @@
         android:id="@+id/equalsButton"
         android:layout_below="@+id/eigthButton"
         android:layout_alignStart="@+id/ninthButton"
-        android:layout_toStartOf="@+id/button3"
+        android:layout_toStartOf="@+id/Multiplybutton"
         android:onClick="onEqual" />
 
     <Button
@@ -146,9 +146,9 @@
         android:layout_height="wrap_content"
         android:text="Del"
         android:id="@+id/delButton"
-        android:layout_alignBottom="@+id/equalsButton"
-        android:layout_toEndOf="@+id/equalsButton"
-        android:onClick="onDelete"/>
+        android:onClick="onDelete"
+        android:layout_below="@+id/seventhButton"
+        android:layout_toStartOf="@+id/zeroButton" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -193,5 +193,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/editText3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:id="@+id/divButton"
+        android:layout_alignBottom="@+id/equalsButton"
+        android:layout_toEndOf="@+id/equalsButton"
+        android:onClick="onDivision"/>
 
 </RelativeLayout>
