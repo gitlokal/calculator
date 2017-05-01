@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textview3;
     private TextView textview4;
     private String display;
+    private enum jobs { add, subs, multipl, div}
+    private jobs job;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         textview3 = (TextView) findViewById(R.id.editText3);
         textview4 = (TextView) findViewById(R.id.editText4);
         display = new String();
+
 
     }
 
@@ -43,7 +46,37 @@ public class MainActivity extends AppCompatActivity {
         textview2.setText("+");
         textview1.setText("");
         display = "";
+        job = jobs.add;
 
+    }
+
+    public void onSubsract(View view) {
+        button = (Button) view;
+        textview3.setText(display);
+        textview2.setText("-");
+        textview1.setText("");
+        display = "";
+        job = jobs.subs;
+
+    }
+
+    public void onMultiply(View view) {
+        button = (Button) view;
+        textview3.setText(display);
+        textview2.setText("*");
+        textview1.setText("");
+        display = "";
+        job = jobs.multipl;
+
+    }
+
+    public void onDivision(View view) {
+        button = (Button) view;
+        textview3.setText(display);
+        textview2.setText("/");
+        textview1.setText("");
+        display = "";
+        job = jobs.div;
 
     }
 
@@ -51,8 +84,20 @@ public class MainActivity extends AppCompatActivity {
         textview4.setText(textview3.getText());
         textview3.setText(textview2.getText());
         textview2.setText(textview1.getText());
-        textview1.setText("");
+        int x = Integer.parseInt(textview4.getText().toString());
+        int y = Integer.parseInt(textview2.getText().toString());
 
+        textview1.setText("");
+        switch(job) {
+            case add:   textview1.setText( Integer.toString(x+y));
+                break;
+            case subs:   textview1.setText( Integer.toString(x-y));
+                break;
+            case multipl:  textview1.setText( Integer.toString(x*y));
+                break;
+            case div:  textview1.setText( Integer.toString(x/y));
+                break;
+        }
 
 
     }
@@ -61,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) view;
         display = "";
         textview1.setText(display);
+        textview2.setText(display);
+        textview3.setText(display);
+        textview4.setText(display);
 
     }
 
